@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Arkanoid Game</title>
+    <style>
+      body {
+        background: linear-gradient(135deg, #1a1a2e, #16213e);
+        color: #fff;
+        font-family: "Arial", sans-serif;
+        min-height: 100vh;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      canvas {
+        border: 3px solid #4ecca3;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(78, 204, 163, 0.3);
+        display: block;
+        margin: 20px auto;
+        background: rgba(0, 0, 0, 0.2);
+      }
+
+      #gameStats {
+        text-align: center;
+        font-size: 24px;
+        margin: 15px 0;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      #score,
+      #lives {
+        color: #4ecca3;
+        font-weight: bold;
+        padding: 0 5px;
+      }
+
+      #gameControls {
+        text-align: center;
+        margin-top: 15px;
+      }
+
+      #restartButton {
+        background: #4ecca3;
+        color: #1a1a2e;
+        border: none;
+        padding: 12px 30px;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(78, 204, 163, 0.3);
+      }
+
+      #restartButton:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(78, 204, 163, 0.4);
+        background: #3db892;
+      }
+
+      #restartButton:active {
+        transform: translateY(1px);
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    <div id="gameStats">
+      Score: <span id="score">0</span> Lives: <span id="lives">3</span>
+    </div>
+    <div id="gameControls">
+      <button id="restartButton">Restart Game</button>
+    </div>
+
+    <!-- Add audio elements -->
+    <audio
+      id="hitSound"
+      src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3"
+    ></audio>
+    <audio
+      id="breakSound"
+      src="https://assets.mixkit.co/active_storage/sfx/2582/2582-preview.mp3"
+    ></audio>
+    <audio
+      id="loseLifeSound"
+      src="https://assets.mixkit.co/active_storage/sfx/2620/2620-preview.mp3"
+    ></audio>
+    <!-- Add paddle hit sound -->
+    <audio
+      id="paddleHitSound"
+      src="https://assets.mixkit.co/active_storage/sfx/2587/2587-preview.mp3"
+    ></audio>
+    <!-- Add game over sound -->
+    <audio
+      id="gameOverSound"
+      src="https://assets.mixkit.co/active_storage/sfx/2570/2570-preview.mp3"
+    ></audio>
+
+    <script src="game.js"></script>
+  </body>
+</html>
